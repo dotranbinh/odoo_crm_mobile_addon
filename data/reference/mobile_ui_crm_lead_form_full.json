@@ -1,0 +1,91 @@
+{
+  "version": 2,
+  "model": "crm.lead",
+  "screen": "form",
+  "other_info_title": "Other Information",
+  "include_custom_fields": true,
+  "description": "Full mobile edit (form) layout — main writable fields from standard Odoo 17 CRM lead/opportunity form.",
+  "sections": [
+    {
+      "key": "contact",
+      "title": "Contact Information",
+      "sequence": 10,
+      "collapsed": false,
+      "fields": [
+        {"name": "partner_name", "label": "Customer", "type": "char", "widget": "text", "required": true, "sequence": 10},
+        {"name": "contact_name", "label": "Contact Name", "type": "char", "widget": "text", "sequence": 20},
+        {"name": "email_from", "label": "Email", "type": "char", "widget": "email", "sequence": 30},
+        {"name": "phone", "label": "Phone", "type": "char", "widget": "phone", "required": true, "sequence": 40},
+        {"name": "mobile", "label": "Mobile", "type": "char", "widget": "phone", "sequence": 50},
+        {"name": "website", "label": "Website", "type": "char", "widget": "url", "sequence": 60},
+        {"name": "function", "label": "Job Position", "type": "char", "widget": "text", "sequence": 70}
+      ]
+    },
+    {
+      "key": "address",
+      "title": "Address",
+      "sequence": 15,
+      "collapsed": false,
+      "fields": [
+        {"name": "street", "label": "Street", "type": "char", "widget": "text", "sequence": 10},
+        {"name": "street2", "label": "Street 2", "type": "char", "widget": "text", "sequence": 20},
+        {"name": "city", "label": "City", "type": "char", "widget": "text", "sequence": 30},
+        {"name": "zip", "label": "ZIP", "type": "char", "widget": "text", "sequence": 40},
+        {"name": "state_id", "label": "State", "type": "many2one", "widget": "many2one", "sequence": 50},
+        {"name": "country_id", "label": "Country", "type": "many2one", "widget": "many2one", "sequence": 60}
+      ]
+    },
+    {
+      "key": "opportunity",
+      "title": "Opportunity",
+      "sequence": 20,
+      "collapsed": false,
+      "fields": [
+        {"name": "name", "label": "Opportunity", "type": "char", "widget": "text", "sequence": 10},
+        {"name": "stage_id", "label": "Stage", "type": "many2one", "widget": "stage", "sequence": 20},
+        {
+          "name": "priority",
+          "label": "Priority",
+          "type": "selection",
+          "widget": "priority",
+          "selection": [["0", "Low"], ["1", "Normal"], ["2", "High"], ["3", "Very High"]],
+          "sequence": 30
+        },
+        {"name": "expected_revenue", "label": "Expected Revenue", "type": "monetary", "widget": "currency", "sequence": 40},
+        {"name": "probability", "label": "Probability (%)", "type": "float", "widget": "number", "sequence": 50},
+        {"name": "date_deadline", "label": "Expected Closing", "type": "date", "widget": "date", "sequence": 60}
+      ]
+    },
+    {
+      "key": "marketing",
+      "title": "Marketing",
+      "sequence": 30,
+      "collapsed": false,
+      "fields": [
+        {"name": "source_id", "label": "Source", "type": "many2one", "widget": "many2one", "sequence": 10},
+        {"name": "medium_id", "label": "Medium", "type": "many2one", "widget": "many2one", "sequence": 20},
+        {"name": "campaign_id", "label": "Campaign", "type": "many2one", "widget": "many2one", "sequence": 30},
+        {"name": "referred", "label": "Referred By", "type": "char", "widget": "text", "sequence": 40}
+      ]
+    },
+    {
+      "key": "sales",
+      "title": "Sales",
+      "sequence": 35,
+      "collapsed": false,
+      "fields": [
+        {"name": "user_id", "label": "Salesperson", "type": "many2one", "widget": "many2one", "sequence": 10},
+        {"name": "team_id", "label": "Sales Team", "type": "many2one", "widget": "many2one", "sequence": 20}
+      ]
+    },
+    {
+      "key": "notes",
+      "title": "Notes",
+      "sequence": 40,
+      "collapsed": false,
+      "fields": [
+        {"name": "description", "label": "Notes", "type": "html", "widget": "html", "sequence": 10}
+      ]
+    }
+  ]
+}

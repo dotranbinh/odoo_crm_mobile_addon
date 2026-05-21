@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_mobile_ui_root"
+              name="Mobile App UI"
+              parent="crm.crm_menu_config"
+              action="action_mobile_ui_layout"
+              sequence="90"
+              groups="crm_mobile_ui.group_mobile_ui_manager"/>
+</odoo>

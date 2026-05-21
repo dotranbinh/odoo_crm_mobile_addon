@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mobile_ui_layout_user,mobile.ui.layout user,model_mobile_ui_layout,crm_mobile_ui.group_mobile_ui_user,1,0,0,0
+access_mobile_ui_layout_manager,mobile.ui.layout manager,model_mobile_ui_layout,crm_mobile_ui.group_mobile_ui_manager,1,1,1,1
+access_mobile_ui_section_user,mobile.ui.section user,model_mobile_ui_section,crm_mobile_ui.group_mobile_ui_user,1,0,0,0
+access_mobile_ui_section_manager,mobile.ui.section manager,model_mobile_ui_section,crm_mobile_ui.group_mobile_ui_manager,1,1,1,1
+access_mobile_ui_field_user,mobile.ui.field user,model_mobile_ui_field,crm_mobile_ui.group_mobile_ui_user,1,0,0,0
+access_mobile_ui_field_manager,mobile.ui.field manager,model_mobile_ui_field,crm_mobile_ui.group_mobile_ui_manager,1,1,1,1

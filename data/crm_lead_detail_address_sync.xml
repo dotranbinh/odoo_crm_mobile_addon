@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Re-applied on module upgrade so existing DBs get Address section (street, street2, …) on detail/form. -->
+<odoo>
+    <record id="section_lead_detail_address" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_detail"/>
+        <field name="name">Address</field>
+        <field name="sequence">15</field>
+    </record>
+    <record id="field_detail_street" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">street</field>
+        <field name="label">Street</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_street2" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">street2</field>
+        <field name="label">Street 2</field>
+        <field name="sequence">20</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_city" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">city</field>
+        <field name="label">City</field>
+        <field name="sequence">30</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_zip" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">zip</field>
+        <field name="label">ZIP</field>
+        <field name="sequence">40</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_state" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">state_id</field>
+        <field name="label">State</field>
+        <field name="sequence">50</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_detail_country" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">country_id</field>
+        <field name="label">Country</field>
+        <field name="sequence">60</field>
+        <field name="widget">many2one</field>
+    </record>
+
+    <record id="section_lead_form_address" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_form"/>
+        <field name="name">Address</field>
+        <field name="sequence">15</field>
+    </record>
+    <record id="field_form_street" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">street</field>
+        <field name="label">Street</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_street2" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">street2</field>
+        <field name="label">Street 2</field>
+        <field name="sequence">20</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_city" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">city</field>
+        <field name="label">City</field>
+        <field name="sequence">30</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_zip" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">zip</field>
+        <field name="label">ZIP</field>
+        <field name="sequence">40</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_state" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">state_id</field>
+        <field name="label">State</field>
+        <field name="sequence">50</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_form_country" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">country_id</field>
+        <field name="label">Country</field>
+        <field name="sequence">60</field>
+        <field name="widget">many2one</field>
+    </record>
+</odoo>

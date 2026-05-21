@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_mobile_ui_layout_tree" model="ir.ui.view">
+        <field name="name">mobile.ui.layout.tree</field>
+        <field name="model">mobile.ui.layout</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="model_name"/>
+                <field name="screen"/>
+                <field name="active"/>
+                <field name="version"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_mobile_ui_layout_form" model="ir.ui.view">
+        <field name="name">mobile.ui.layout.form</field>
+        <field name="model">mobile.ui.layout</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_set_active" type="object" string="Set Active"
+                            class="btn-primary" invisible="active"/>
+                    <button name="action_duplicate" type="object" string="Duplicate"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Layout name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="model_name"/>
+                            <field name="screen"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="version" readonly="1"/>
+                            <field name="include_custom_fields"/>
+                            <field name="other_info_title"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Sections" name="sections">
+                            <field name="section_ids">
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="collapsed"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="sequence"/>
+                                        <field name="collapsed"/>
+                                    </group>
+                                    <field name="field_ids">
+                                        <tree editable="bottom">
+                                            <field name="sequence" widget="handle"/>
+                                            <field name="field_name"/>
+                                            <field name="label"/>
+                                            <field name="widget"/>
+                                            <field name="readonly"/>
+                                            <field name="required"/>
+                                            <field name="show_if_empty"/>
+                                            <field name="copyable"/>
+                                            <field name="list_primary"/>
+                                            <field name="list_subtitle"/>
+                                        </tree>
+                                    </field>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Preview JSON" name="preview">
+                            <field name="preview_json" readonly="0" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mobile_ui_layout" model="ir.actions.act_window">
+        <field name="name">Mobile App UI</field>
+        <field name="res_model">mobile.ui.layout</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

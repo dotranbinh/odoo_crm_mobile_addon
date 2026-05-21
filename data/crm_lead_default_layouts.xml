@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- LIST -->
+    <record id="layout_crm_lead_list" model="mobile.ui.layout">
+        <field name="name">CRM Lead - List (Mobile)</field>
+        <field name="model_name">crm.lead</field>
+        <field name="screen">list</field>
+        <field name="active" eval="True"/>
+        <field name="include_custom_fields" eval="False"/>
+    </record>
+    <record id="section_lead_list_card" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_list"/>
+        <field name="name">Card</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="field_list_name" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_list_card"/>
+        <field name="field_name">name</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+        <field name="list_primary" eval="True"/>
+    </record>
+    <record id="field_list_partner" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_list_card"/>
+        <field name="field_name">partner_name</field>
+        <field name="sequence">20</field>
+        <field name="widget">text</field>
+        <field name="list_subtitle" eval="True"/>
+    </record>
+    <record id="field_list_phone" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_list_card"/>
+        <field name="field_name">phone</field>
+        <field name="sequence">30</field>
+        <field name="widget">phone</field>
+    </record>
+    <record id="field_list_stage" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_list_card"/>
+        <field name="field_name">stage_id</field>
+        <field name="sequence">40</field>
+        <field name="widget">stage</field>
+    </record>
+    <record id="field_list_user" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_list_card"/>
+        <field name="field_name">user_id</field>
+        <field name="sequence">50</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_list_create_date" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_list_card"/>
+        <field name="field_name">create_date</field>
+        <field name="sequence">60</field>
+        <field name="widget">datetime</field>
+    </record>
+
+    <!-- DETAIL -->
+    <record id="layout_crm_lead_detail" model="mobile.ui.layout">
+        <field name="name">CRM Lead - Detail (Mobile)</field>
+        <field name="model_name">crm.lead</field>
+        <field name="screen">detail</field>
+        <field name="active" eval="True"/>
+        <field name="include_custom_fields" eval="True"/>
+        <field name="other_info_title">Other Information</field>
+    </record>
+    <record id="section_lead_detail_contact" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_detail"/>
+        <field name="name">Contact Information</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="field_detail_partner_name" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_contact"/>
+        <field name="field_name">partner_name</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_contact_name" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_contact"/>
+        <field name="field_name">contact_name</field>
+        <field name="sequence">20</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_phone" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_contact"/>
+        <field name="field_name">phone</field>
+        <field name="sequence">30</field>
+        <field name="widget">phone</field>
+        <field name="copyable" eval="True"/>
+    </record>
+    <record id="field_detail_mobile" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_contact"/>
+        <field name="field_name">mobile</field>
+        <field name="sequence">40</field>
+        <field name="widget">phone</field>
+        <field name="copyable" eval="True"/>
+    </record>
+    <record id="field_detail_email" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_contact"/>
+        <field name="field_name">email_from</field>
+        <field name="sequence">50</field>
+        <field name="widget">email</field>
+        <field name="copyable" eval="True"/>
+    </record>
+    <record id="field_detail_website" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_contact"/>
+        <field name="field_name">website</field>
+        <field name="sequence">60</field>
+        <field name="widget">url</field>
+    </record>
+    <record id="field_detail_function" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_contact"/>
+        <field name="field_name">function</field>
+        <field name="sequence">70</field>
+        <field name="widget">text</field>
+    </record>
+
+    <record id="section_lead_detail_address" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_detail"/>
+        <field name="name">Address</field>
+        <field name="sequence">15</field>
+    </record>
+    <record id="field_detail_street" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">street</field>
+        <field name="label">Street</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_street2" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">street2</field>
+        <field name="label">Street 2</field>
+        <field name="sequence">20</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_city" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">city</field>
+        <field name="label">City</field>
+        <field name="sequence">30</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_zip" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">zip</field>
+        <field name="label">ZIP</field>
+        <field name="sequence">40</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_state" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">state_id</field>
+        <field name="label">State</field>
+        <field name="sequence">50</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_detail_country" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_address"/>
+        <field name="field_name">country_id</field>
+        <field name="label">Country</field>
+        <field name="sequence">60</field>
+        <field name="widget">many2one</field>
+    </record>
+
+    <record id="section_lead_detail_opportunity" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_detail"/>
+        <field name="name">Opportunity</field>
+        <field name="sequence">20</field>
+    </record>
+    <record id="field_detail_name" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_opportunity"/>
+        <field name="field_name">name</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_detail_stage" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_opportunity"/>
+        <field name="field_name">stage_id</field>
+        <field name="sequence">20</field>
+        <field name="widget">stage</field>
+    </record>
+    <record id="field_detail_priority" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_opportunity"/>
+        <field name="field_name">priority</field>
+        <field name="sequence">30</field>
+        <field name="widget">priority</field>
+    </record>
+    <record id="field_detail_expected_revenue" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_opportunity"/>
+        <field name="field_name">expected_revenue</field>
+        <field name="sequence">40</field>
+        <field name="widget">currency</field>
+    </record>
+    <record id="field_detail_probability" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_opportunity"/>
+        <field name="field_name">probability</field>
+        <field name="sequence">50</field>
+        <field name="widget">number</field>
+    </record>
+    <record id="field_detail_date_deadline" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_opportunity"/>
+        <field name="field_name">date_deadline</field>
+        <field name="sequence">60</field>
+        <field name="widget">date</field>
+    </record>
+
+    <record id="section_lead_detail_marketing" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_detail"/>
+        <field name="name">Marketing</field>
+        <field name="sequence">30</field>
+    </record>
+    <record id="field_detail_source" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_marketing"/>
+        <field name="field_name">source_id</field>
+        <field name="label">Source</field>
+        <field name="sequence">10</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_detail_user" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_marketing"/>
+        <field name="field_name">user_id</field>
+        <field name="label">Salesperson</field>
+        <field name="sequence">20</field>
+        <field name="widget">many2one</field>
+    </record>
+
+    <record id="section_lead_detail_notes" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_detail"/>
+        <field name="name">Notes</field>
+        <field name="sequence">40</field>
+    </record>
+    <record id="field_detail_description" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_notes"/>
+        <field name="field_name">description</field>
+        <field name="sequence">10</field>
+        <field name="widget">html</field>
+        <field name="show_if_empty" eval="True"/>
+    </record>
+
+    <!-- FORM (EDIT) -->
+    <record id="layout_crm_lead_form" model="mobile.ui.layout">
+        <field name="name">CRM Lead - Form (Mobile)</field>
+        <field name="model_name">crm.lead</field>
+        <field name="screen">form</field>
+        <field name="active" eval="True"/>
+        <field name="include_custom_fields" eval="True"/>
+        <field name="other_info_title">Other Information</field>
+    </record>
+    <record id="section_lead_form_contact" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_form"/>
+        <field name="name">Contact Information</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="field_form_partner_name" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_contact"/>
+        <field name="field_name">partner_name</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+        <field name="required" eval="True"/>
+    </record>
+    <record id="field_form_phone" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_contact"/>
+        <field name="field_name">phone</field>
+        <field name="sequence">20</field>
+        <field name="widget">phone</field>
+        <field name="required" eval="True"/>
+    </record>
+    <record id="field_form_email" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_contact"/>
+        <field name="field_name">email_from</field>
+        <field name="sequence">30</field>
+        <field name="widget">email</field>
+    </record>
+    <record id="field_form_mobile" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_contact"/>
+        <field name="field_name">mobile</field>
+        <field name="sequence">40</field>
+        <field name="widget">phone</field>
+    </record>
+
+    <record id="section_lead_form_address" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_form"/>
+        <field name="name">Address</field>
+        <field name="sequence">15</field>
+    </record>
+    <record id="field_form_street" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">street</field>
+        <field name="label">Street</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_street2" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">street2</field>
+        <field name="label">Street 2</field>
+        <field name="sequence">20</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_city" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">city</field>
+        <field name="label">City</field>
+        <field name="sequence">30</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_zip" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">zip</field>
+        <field name="label">ZIP</field>
+        <field name="sequence">40</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_state" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">state_id</field>
+        <field name="label">State</field>
+        <field name="sequence">50</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_form_country" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_address"/>
+        <field name="field_name">country_id</field>
+        <field name="label">Country</field>
+        <field name="sequence">60</field>
+        <field name="widget">many2one</field>
+    </record>
+
+    <record id="section_lead_form_opportunity" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_form"/>
+        <field name="name">Opportunity</field>
+        <field name="sequence">20</field>
+    </record>
+    <record id="field_form_name" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_opportunity"/>
+        <field name="field_name">name</field>
+        <field name="sequence">10</field>
+        <field name="widget">text</field>
+    </record>
+    <record id="field_form_stage" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_opportunity"/>
+        <field name="field_name">stage_id</field>
+        <field name="sequence">20</field>
+        <field name="widget">stage</field>
+    </record>
+    <record id="field_form_priority" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_opportunity"/>
+        <field name="field_name">priority</field>
+        <field name="sequence">30</field>
+        <field name="widget">priority</field>
+    </record>
+    <record id="field_form_expected_revenue" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_opportunity"/>
+        <field name="field_name">expected_revenue</field>
+        <field name="sequence">40</field>
+        <field name="widget">currency</field>
+    </record>
+    <record id="field_form_probability" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_opportunity"/>
+        <field name="field_name">probability</field>
+        <field name="sequence">50</field>
+        <field name="widget">number</field>
+    </record>
+    <record id="field_form_date_deadline" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_opportunity"/>
+        <field name="field_name">date_deadline</field>
+        <field name="sequence">60</field>
+        <field name="widget">date</field>
+    </record>
+
+    <record id="section_lead_form_notes" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_form"/>
+        <field name="name">Notes</field>
+        <field name="sequence">30</field>
+    </record>
+    <record id="field_form_description" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_notes"/>
+        <field name="field_name">description</field>
+        <field name="sequence">10</field>
+        <field name="widget">html</field>
+    </record>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Re-applied on module upgrade (noupdate=0) so existing DBs get Marketing / source_id on detail. -->
+<odoo>
+    <record id="section_lead_detail_marketing" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_detail"/>
+        <field name="name">Marketing</field>
+        <field name="sequence">30</field>
+    </record>
+    <record id="field_detail_source" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_marketing"/>
+        <field name="field_name">source_id</field>
+        <field name="label">Source</field>
+        <field name="sequence">10</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_detail_user" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_detail_marketing"/>
+        <field name="field_name">user_id</field>
+        <field name="label">Salesperson</field>
+        <field name="sequence">20</field>
+        <field name="widget">many2one</field>
+    </record>
+</odoo>
