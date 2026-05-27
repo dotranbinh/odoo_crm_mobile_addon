@@ -366,6 +366,33 @@
         <field name="widget">date</field>
     </record>
 
+    <record id="section_lead_form_marketing" model="mobile.ui.section">
+        <field name="layout_id" ref="layout_crm_lead_form"/>
+        <field name="name">Marketing</field>
+        <field name="sequence">25</field>
+    </record>
+    <record id="field_form_source" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_marketing"/>
+        <field name="field_name">source_id</field>
+        <field name="label">Source</field>
+        <field name="sequence">10</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_form_medium" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_marketing"/>
+        <field name="field_name">medium_id</field>
+        <field name="label">Medium</field>
+        <field name="sequence">20</field>
+        <field name="widget">many2one</field>
+    </record>
+    <record id="field_form_campaign" model="mobile.ui.field">
+        <field name="section_id" ref="section_lead_form_marketing"/>
+        <field name="field_name">campaign_id</field>
+        <field name="label">Campaign</field>
+        <field name="sequence">30</field>
+        <field name="widget">many2one</field>
+    </record>
+
     <record id="section_lead_form_notes" model="mobile.ui.section">
         <field name="layout_id" ref="layout_crm_lead_form"/>
         <field name="name">Notes</field>

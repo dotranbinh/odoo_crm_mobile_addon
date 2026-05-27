@@ -74,7 +74,7 @@
                             </field>
                         </page>
                         <page string="Preview JSON" name="preview">
-                            <field name="preview_json" readonly="0" nolabel="1"/>
+                            <field name="preview_json" readonly="1" nolabel="1"/>
                         </page>
                     </notebook>
                 </sheet>

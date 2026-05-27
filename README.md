@@ -45,12 +45,3 @@ Method: `get_mobile_layout(model_name, screen, company_id=None, lang=None)`
 ## Default data
 
 On install, creates active layouts for `crm.lead` list, detail, and form with sensible default fields.
-
-## Full layout JSON (reference)
-
-Standard Odoo 17 CRM lead fields (detail + edit):
-
-- `data/reference/mobile_ui_crm_lead_detail_full.json`
-- `data/reference/mobile_ui_crm_lead_form_full.json`
-
-See `data/reference/README.md` for section/field list.
